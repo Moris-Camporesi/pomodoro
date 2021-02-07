@@ -49,6 +49,17 @@ HEIGHT = 400
 WIDTH = 700
 TIMER = "Here will be the timer"
 
+def start_function():
+    print("Start-Timer-Button has been clicked")
+
+def settings_functin():
+    print("Settings Button has been clicked")
+
+def preset_function():
+    print("Preset Button has beet clicked")
+
+
+
 # root = tk.Tk()
 
 # canvas = tk.Canvas(root, height = HEIGHT, width = WIDTH)
@@ -73,8 +84,16 @@ TIMER = "Here will be the timer"
 
 root = tk.Tk()
 
+
+
 canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
 canvas.pack()
+
+#Background image
+# background_image = tk.PhotoImage(file='Backgrounds/tomato.png')
+# background_label = tk.Label(root, image=background_image)
+# background_label.place(relwidth=1, relheight=1)
+
 
 frame = tk.Frame(root, bg='#80f3cc', bd = 5)
 frame.place(relx=0., rely=0, relwidth=1, relheight=1)
@@ -85,13 +104,13 @@ timer_frame.place(relx= 0.5, rely=0.1, relwidth= 0.5, relheight= 0.4, anchor='n'
 Timer_label = tk.Label(timer_frame, text=TIMER)
 Timer_label.place(relwidth=1,relheight=1)
 
-Settings_button = tk.Button(frame, text='Settings', bg='gray')
+Settings_button = tk.Button(frame, text='Settings', bg='gray', command=settings_functin)
 Settings_button.place(relx=0.25, rely=0.7, relwidth=0.2, relheight= 0.2, anchor='n')
 
-Start_button = tk.Button(frame, text='Start', bg='gray')
+Start_button = tk.Button(frame, text='Start', bg='gray', command=start_function)
 Start_button.place(relx=0.5, rely=0.7, relwidth=0.2, relheight=0.2, anchor='n')
 
-Preset_button = tk.Button(frame, text='Timer-Presets', bg='gray')
+Preset_button = tk.Button(frame, text='Timer-Presets', bg='gray', command=preset_function)
 Preset_button.place(relx=0.75, rely=0.7, relwidth=0.2, relheight=0.2, anchor='n')
 
 
