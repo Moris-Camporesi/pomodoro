@@ -2,6 +2,7 @@
 
 
 import easygui, random
+
 #easygui.msgbox("Hello there!")
 
 #user_response = easygui.msgbox("Hello there!")
@@ -43,23 +44,6 @@ def number_guessing():
 # ___________________________________________________________________________________________________________________________________________
 # -------------------------------------------------------------------------------------------------------------------------------------------
 
-import tkinter as tk
-
-HEIGHT = 400
-WIDTH = 700
-TIMER = "Here will be the timer"
-
-def start_function():
-    print("Start-Timer-Button has been clicked")
-
-def settings_functin():
-    print("Settings Button has been clicked")
-
-def preset_function():
-    print("Preset Button has beet clicked")
-
-
-
 # root = tk.Tk()
 
 # canvas = tk.Canvas(root, height = HEIGHT, width = WIDTH)
@@ -82,8 +66,30 @@ def preset_function():
 # root.mainloop()
 
 
-root = tk.Tk()
+import tkinter as tk
 
+HEIGHT = 400
+WIDTH = 700
+TIMER = "Here will be the timer"
+
+def start_function(): 
+    print("Start-Timer-Button has been clicked")
+
+def start_button_toggle():
+    if(Start_button['text']=='Start'):
+        Start_button['text']='Pause'
+    else:
+        Start_button['text']='Start'
+
+def settings_functin():
+    print("Settings Button has been clicked")
+
+def preset_function():
+    print("Preset Button has beet clicked")
+
+
+
+root = tk.Tk()
 
 
 canvas = tk.Canvas(root, height=HEIGHT, width=WIDTH)
@@ -104,10 +110,11 @@ timer_frame.place(relx= 0.5, rely=0.1, relwidth= 0.5, relheight= 0.4, anchor='n'
 Timer_label = tk.Label(timer_frame, text=TIMER)
 Timer_label.place(relwidth=1,relheight=1)
 
+
 Settings_button = tk.Button(frame, text='Settings', bg='gray', command=settings_functin)
 Settings_button.place(relx=0.25, rely=0.7, relwidth=0.2, relheight= 0.2, anchor='n')
 
-Start_button = tk.Button(frame, text='Start', bg='gray', command=start_function)
+Start_button = tk.Button(frame, text='Start', bg='gray', command=lambda:[start_function(),start_button_toggle()])
 Start_button.place(relx=0.5, rely=0.7, relwidth=0.2, relheight=0.2, anchor='n')
 
 Preset_button = tk.Button(frame, text='Timer-Presets', bg='gray', command=preset_function)

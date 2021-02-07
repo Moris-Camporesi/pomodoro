@@ -1,24 +1,27 @@
 import time, winsound
 
 
-class pomodoro:
+class pomodoro_timer:
 
     def __init__(self):
         self.studytime_def = 50
         self.breaktime_def = 10
         self.running = True
-        first_step = self.messaging()
+        # first_step = self.messaging()
         
 
-        if first_step == "START":
-            print("\nAlright let's start!")
-            self.start()
+        # # if first_step == "START":
+        #     print("\nAlright let's start!")
+        #     self.start()
         
-        if first_step == "EDIT":
-            self.timer_settings()
+        # if first_step == "EDIT":
+        #     self.timer_settings()
 
-        if first_step == "SETTINGS":
-            self.misc_settings()
+        # if first_step == "SETTINGS":
+        #     self.misc_settings()
+
+    def __str__(self):
+        return "Current timer-version '0.03'."
 
     def __repr__(self):
         return "This is the current pomodoro-build"
@@ -83,4 +86,4 @@ class pomodoro:
 
 
 # a = pomodoro()
-print("Hello Sabrina")
+# print("Hello Sabrina")
